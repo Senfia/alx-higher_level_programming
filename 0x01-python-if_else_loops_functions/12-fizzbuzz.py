@@ -8,4 +8,4 @@ def fizzbuzz():
         elif n % 3 == 0:
             print("Fizz ", end="")
         else:
-            print(format(n), end="")
+            print("{:d} ".format(n), end="")
