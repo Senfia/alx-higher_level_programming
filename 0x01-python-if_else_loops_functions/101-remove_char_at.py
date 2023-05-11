@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-def magic_calculation(i, j, k):
-    if (i < j):
-        return c
-    if (j < k):
-        return (i + j)
-    return (a * b - c)
+def remove_char_at(str, n):
+    if (num >= 0):
+        str = str[:num] + str[num + 1:]
+    return (str)
