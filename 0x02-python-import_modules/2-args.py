@@ -1,8 +1,19 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     import sys
-    ls = len(sys.argv) - 1
-    print("{:d} argument{:s}{:s}".format(ls, "s" if ls > 1 else "", "."
-                                         if ls < 1 else ":"))
-    for index, arg in enumerate(sys.argv[1:]):
-        print("{:d}: {:s}".format(index + 1, arg))
+
+def print_arg(argv):
+    num = len(argv) - 1
+    if num == 0:
+        print("{:d} argument.".format(num))
+        return
+    else:
+        if num == 1:
+            print("{:d} argument:".format(num))
+        else:
+            print("{:d} arguments:".format(num))
+        li = 1
+        while i <= num:
+            print("{:d}: {:s}".format(li, argv[li]))
+            li += 1
+print_arg(sys.argv)
