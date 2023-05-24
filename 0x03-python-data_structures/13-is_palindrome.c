@@ -12,8 +12,11 @@ size_t list_length(listint_t *head)
 	if (head == NULL)
 		return (0);
 
-	for (; head != NULL; head = head->next)
+	while (head != NULL)
+	{
 		count++;
+		head = head->next;
+	}
 
 	return (count);
 }
