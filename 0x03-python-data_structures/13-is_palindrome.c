@@ -12,11 +12,8 @@ size_t list_length(listint_t *head)
 	if (head == NULL)
 		return (0);
 
-	while (head != NULL)
-	{
+	for (; head != NULL; head = head->next)
 		count++;
-		head = head->next;
-	}
 
 	return (count);
 }
@@ -24,7 +21,7 @@ size_t list_length(listint_t *head)
 /**
  * is_palindrome - Checks if a singly linked list is a palindrome.
  * @head: Double pointer to the head of the linked list.
- * Return: 1 if the linked list is a palindrome, 0 otherwise.
+ * Return: 1 if the linked list is a palindrome. Otherwise, 0.
  */
 int is_palindrome(listint_t **head)
 {
