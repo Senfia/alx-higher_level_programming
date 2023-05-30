@@ -6,9 +6,11 @@ Class Square definition module
 
 class Square:
     """define a square."""
-    def __init__(self, size):
+    def __init__(self, size=0):
         """
         instantiate object
+        Arguments:
+        	size(int): square size
         """
         if type(size) is not int:
             raise TypeError("size must be an integer")
