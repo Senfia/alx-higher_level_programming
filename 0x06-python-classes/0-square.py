@@ -5,4 +5,5 @@ Class Square definition module
 
 
 class Square:
+    """define a square."""
     pass
