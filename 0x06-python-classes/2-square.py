@@ -1,18 +1,14 @@
 #!/usr/bin/python3
-"""
-Class Square definition module
-"""
+"""Class Square definition module"""
 
 
 class Square:
     """define a square."""
-    
+
     def __init__(self, size=0):
-        """
-        instantiate object
-        
+        """Initialize a new Square.
         Arguments:
-        	size(int): square size
+            size (int): The size of the new square.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
