@@ -25,6 +25,23 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    @property
+    def position(self):
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        errMes = "position must be a tuple of 2 positive integers"
+        if type(value) is not tuple:
+            raise TypeError(errMes)
+        if len(value) < 2:
+            raise TypeError(errMes)
+        if not (type(value[0]) is int and type(value[1]) is int):
+            raise TypeError(errMes)
+        if (value[0] < 0 or value[1] < 0):
+            raise TypeError(errMes)
+        self.__position = value
+    
     def area(self):
         """Return area."""
         return (self.__size * self.__size)
