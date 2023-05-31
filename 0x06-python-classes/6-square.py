@@ -31,6 +31,7 @@ class Square:
 
     @position.setter
     def position(self, value):
+        """Return area of Square object"""
         errMes = "position must be a tuple of 2 positive integers"
         if type(value) is not tuple:
             raise TypeError(errMes)
