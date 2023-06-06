@@ -49,8 +49,7 @@ class Rectangle:
     def __str__(self):
         if (self.__width == 0) or (self.__height == 0):
             return ("")
-        return ("\n".join(["#" * self.__width
-                           for i in range(self.__height)]))
+        return ("\n".join(["#" * self.__width for i in range(self.__height)]))
 
     def __repr__(self):
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
