@@ -6,24 +6,11 @@ This module contains 1 Rectangle class
 
 
 class Rectangle:
-    """
-    Initialize Rectangle object with width and height.
+    """defines class Rectangle
     """
     def __init__(self, width=0, height=0):
-        self.width = width
         self.height = height
-
-    @property
-    def width(self):
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be >= 0")
-        self.__width = value
+        self.width = width
 
     @property
     def height(self):
@@ -31,8 +18,21 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        if type(value)is not int:
-            raise TypeError("height must be an integer")
+        if self.__check_arg(value, "height"):
+            self.__height = value
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if self.__check_arg(value, "width"):
+            self.__width = value
+
+    def __check_arg(self, value, attribute):
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(attribute))
         if value < 0:
-            raise ValueError("height must be >=0")
-        self.__height = value
+            raise ValueError("{} must be >= 0".format(attribute))
+        return (True)
