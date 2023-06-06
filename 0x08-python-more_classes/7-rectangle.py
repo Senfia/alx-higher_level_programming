@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """
-This is module 7-rectangle
-
-This module contains 1 class Rectangle
+This is a Rectangle class.
+This module contains 1 Rectangle class
 """
 
 
