@@ -6,6 +6,9 @@ This module contains 1 Rectangle class
 
 
 class Rectangle:
+    """
+    defines class Rectangle
+    """
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
