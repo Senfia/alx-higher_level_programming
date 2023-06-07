@@ -1,0 +1,70 @@
+The ``5-test_indentation`` module
+=================================
+
+This is a text file in reStructuredText format to test the above module.
+
+Using ``text_indentation``
+------------------------
+
+First import ``text_indentation`` from the ``5-text_indentation`` module:
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+
+>>> text_indentation("Check? Check codes: work. Or.")
+Check?
+<BLANKLINE>
+These codes:
+<BLANKLINE>
+work.
+<BLANKLINE>
+Or.
+<BLANKLINE>
+
+>>> text_indentation(".?\nWaffles:\n?")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+<BLANKLINE>
+Waffles:
+<BLANKLINE>
+<BLANKLINE>
+?
+<BLANKLINE>
+
+>>> text_indentation("Hello, There!")
+Hello, There!
+
+>>> text_indentation(" Howdy")
+Howdy
+
+
+>>> text_indentation("	HEY STRANGER!...	Nice to meet you.\n	Alright	")
+HEY STRANGER!.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+Nice to meet you.
+<BLANKLINE>
+<BLANKLINE>
+	Alright
+
+>>> text_indentation("  .  ?	:	")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation(":?.")    #doctest: +REPORT_NDIFF
+:
+<BLANKLINE>
+?
+<BLANKLINE>
+.
+<BLANKLINE>

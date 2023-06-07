@@ -20,29 +20,29 @@ Now use it:
 >>> add_integer(-True, False)
 -1
 
->>> add_integer(-True, -False)
--1
-
 >>> add_integer(True, False)
 1
 
->>> add_integer(True, -False)
-1
+>>> add_integer(-True, -False)
+-1
 
 >>> add_integer(100.3, 100.3)
 200
+
+>>> add_integer(True, -False)
+1
 
 >>> add_integer("school", 100.3)
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
 
->>> add_integer("Love", "School")
+>>> add_integer("Love", "Everyone")
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
 
->>> add_integer(None, "School")
+>>> add_integer(None, "String")
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
