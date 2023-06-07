@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 """
 This is the "add_integer" module.
-
-This module supplies one function: add_integer
+Defines an integer addition function.
 """
 
 
 def add_integer(a, b):
     """
-    Return the sum of a and b.
+    Returns the sum of a and b.
     """
     if isinstance(a, float):
         a = int(a)
