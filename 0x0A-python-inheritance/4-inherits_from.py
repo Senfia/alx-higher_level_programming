@@ -6,7 +6,6 @@ It only defines one funtion
 """
 
 
-
 def inherits_from(obj, a_class):
     """
     evaluates if an object is directly or indrectly from a
