@@ -6,7 +6,6 @@ It only defines one funtion
 """
 
 
-
 def is_kind_of_class(obj, a_class):
     """
     evaluates an object and it's subclass
