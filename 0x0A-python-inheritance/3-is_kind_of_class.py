@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is module 2-is_same_class
+This is module is_kind_of_class
 
 It only defines one funtion
 """
