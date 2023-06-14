@@ -32,4 +32,3 @@ class Student:
         """
         for key, value in json_data.items():
             self.__dict__[key] = value
-

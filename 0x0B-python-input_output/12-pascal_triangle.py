@@ -22,4 +22,3 @@ def pascal_triangle(n):
         n_val += 1
 
     return rows
-
