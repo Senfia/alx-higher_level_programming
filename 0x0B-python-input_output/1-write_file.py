@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 """
-It contains one function
+write_file module.
+It contains one function.
 """
 
 
-def number_of_lines(filename=""):
+def write_file(filename="", text=""):
     """
-    Returns Number of lines in a file
+    Write a string to a text file 
+    returns: the number of characters.
     """
-    with open(filename, 'r') as f:
-        count = 0
-        for line in f:
-            count += 1
-    return count
+    with open(filename, 'w') as f:
+        return f.write(text)
