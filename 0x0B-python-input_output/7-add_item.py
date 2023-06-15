@@ -3,6 +3,8 @@
 load_from_json_file module.
 It contains one function.
 """
+
+
 import sys
 
 
