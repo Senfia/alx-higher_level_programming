@@ -1,30 +1,43 @@
 #!/usr/bin/python3
 """
-Sort_dict module.
-It contains one function.
+sorted_dict module.
+It contains two function.
 """
 
-
+import signal
+import re
 import sys
 
-size = 0
-count = 0
-status_codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
-try:
-    for line in sys.stdin:
-        if count % 10 == 0:
-            print("File size: {}".format(size))
-            for key, value in sorted(status_codes.items()):
-                if value != 0:
-                    print("{}: {}".format(key, value))
-        for key in status_codes.keys():
-            if str(key) in line:
-                status_codes[key] = status_codes[key] + 1
-        size = line.rsplit(' ', 1)[1]
-        size += size
-        count += 1
-except KeyboardInterrupt:
-    print("File size: {}".format(size))
-    for key, value in sorted(status_codes.items()):
-        if value != 0:
-            print("{}: {}".format(key, value))
+def sorted_dict(d):
+    if d:
+        print("\n".join(["{}: {:d}".format(k, d[k])
+                         for k in sorted(d.keys())]))
+
+
+def imp_stdin():
+    """reads stdin"""
+    size = 0
+    count = 0
+    codes = {}
+    possib = ["200", "301", "400", "401", "403", "404", "405", "500"]
+    try:
+        for line in sys.stdin:
+            line_split = line.split()
+            if line_split[-1].isdecimal():
+                size += int(line_split[-1])
+                if line_split[-2] in possib:
+                    codes[line_split[-2]] = codes.get(
+                        line_split[-2], 0) + 1
+            count += 1
+            if count % 10 == 0:
+                print("File size: {:d}".format(size))
+                sorted_dict(codes)
+    except KeyboardInterrupt:
+        print("File size: {:d}".format(size))
+        sorted_dict(codes)
+        raise
+    print("File size: {:d}".format(size))
+    sorted_dict(codes)
+
+
+imp_stdin()
