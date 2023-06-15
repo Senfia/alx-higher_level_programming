@@ -21,7 +21,7 @@ try:
             if str(key) in line:
                 status_codes[key] = status_codes[key] + 1
         size = line.rsplit(' ', 1)[1]
-        size += int(size)
+        size += size
         count += 1
 except KeyboardInterrupt:
     print("File size: {}".format(size))
