@@ -10,10 +10,10 @@ def pascal_triangle(n):
     """
     if n <= 0:
         return []
-    
+
     rows = [[1 for j in range(i + 1)] for i in range(n)]
     n_val = 0
-    
+
     while n_val < n:
         i = 0
         while i < n_val - 1:
