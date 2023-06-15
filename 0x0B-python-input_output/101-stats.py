@@ -4,9 +4,11 @@ sorted_dict module.
 It contains two function.
 """
 
+
 import signal
 import re
 import sys
+
 
 def sorted_dict(d):
     if d:
