@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-load_from_json_file module.
+append_after module.
 It contains one function.
 """
 
