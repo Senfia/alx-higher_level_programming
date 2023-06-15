@@ -22,7 +22,7 @@ class Student:
         gets a dictionary of Student.
         """
         if attr is not None:
-            reslt = {o: self.__dict__[k] for o in self.__dict__.keys() & attr}
+            reslt = {o: self.__dict__[o] for o in self.__dict__.keys() & attr}
             return (reslt)
         else:
             return (self.__dict__)
