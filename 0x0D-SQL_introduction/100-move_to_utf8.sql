@@ -1,6 +1,5 @@
 -- converts database, a table within and name to UTF8
 -- Convert db 'hbtn_0c_0'
--- Last com
 ALTER DATABASE hbtn_0c_0
 CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
