@@ -1,4 +1,4 @@
- -- selects all genres for Dexter
+-- selects all genres for Dexter
 SELECT a.`name` 
 FROM `tv_genres` AS a
 INNER JOIN `tv_show_genres` AS s
