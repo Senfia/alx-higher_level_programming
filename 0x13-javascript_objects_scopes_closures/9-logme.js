@@ -1,8 +1,5 @@
 #!/usr/bin/node
-
-let cou = 0;
-
-exports.logMe = function count (item) {
-  console.log(`${counter}: ${item}`);
-  cou += 1;
+exports.logMe = function (item) {
+  this.times = (this.times || 0) + 1;
+  console.log(`${this.times - 1}: ${item}`);
 };
