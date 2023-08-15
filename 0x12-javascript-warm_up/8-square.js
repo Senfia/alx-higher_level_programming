@@ -1,14 +1,14 @@
 #!/usr/bin/node
 
-let myVar = process.argv.slice(2);
-if (isNaN(myVar[0])) {
+let sizes = parseInt(process.argv[2]);
+if (isNaN(sizes) || process.argv[2] === undefined) {
   console.log('Missing size');
-} else {
-  for (let i = 0; i < myVar[0]; i++) {
-    let square = '';
-    for (let j = 0; j < myVar[0]; j++) {
-      square += 'X';
-    }
-    console.log(square);
-  }
+}
+let pstrr = 'X';
+for (let i = 0; i < sizes - 1; i++) {
+  pstrr += 'X';
+}
+while (sizes > 0) {
+  console.log(pstrr);
+  sizes--;
 }
