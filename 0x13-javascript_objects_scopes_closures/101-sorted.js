@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const dict = require('./101-data').dict;
-const neDict = {};
+const nwDict = {};
 
 Object.keys(dict).map(function (key) {
   if (!Array.isArray(nwDict[dict[key]])) {
