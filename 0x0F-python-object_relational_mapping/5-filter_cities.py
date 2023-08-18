@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-this script lists all cities of given state
+this script lists all cities of given state from the database hbtn_0e_4_usa
 """
 
 
