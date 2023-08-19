@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-this script lists all states from the database hbtn_0e_6_usa using SQLAlchemy
+this script lists all State objects from the database hbtn_0e_6_usa
 """
 
 
@@ -12,9 +12,9 @@ if __name__ == "__main__":
     else:
         engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
             sys.argv[1], sys.argv[2], sys.argv[3]))
-        conn = engine.connect()
-        states = conn.execute("SELECT * FROM states")
+        connection = engine.connect()
+        states = connection.execute("SELECT * FROM states")
         for state in states:
             print("{:d}: {:s}".format(state[0], state[1]))
-        conn.close()
+        connection.close()
         engine.dispose()
