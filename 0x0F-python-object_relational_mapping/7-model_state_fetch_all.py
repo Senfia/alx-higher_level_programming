@@ -12,9 +12,9 @@ if __name__ == "__main__":
     else:
         engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
             sys.argv[1], sys.argv[2], sys.argv[3]))
-        connection = engine.connect()
-        states = connection.execute("SELECT * FROM states")
+        connec = engine.connect()
+        states = connec.execute("SELECT * FROM states")
         for state in states:
             print("{:d}: {:s}".format(state[0], state[1]))
-        connection.close()
+        connec.close()
         engine.dispose()
