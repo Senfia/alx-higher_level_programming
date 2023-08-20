@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-this script prints all states from the database 
+this script prints all states from the database
 hbtn_0e_6_usa using SQLAlchemy
 """
 
