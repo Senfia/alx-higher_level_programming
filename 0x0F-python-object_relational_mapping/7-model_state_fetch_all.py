@@ -5,16 +5,15 @@ this script lists all State objects from the database hbtn_0e_6_usa
 
 
 import sys
-from sqlalchemy import create_engine
+import sqlalchemy
+from model_state import Base, State
+
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: username password database_name")
-    else:
-        engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-            sys.argv[1], sys.argv[2], sys.argv[3]))
-        conn = engine.connect()
-        states = conn.execute("SELECT * FROM states")
-        for state in states:
-            print("{:d}: {:s}".format(state[0], state[1]))
-        conn.close()
-        engine.dispose()
+    engine = sqlalchemy.create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                                      .format(sys.argv[1],
+                                              sys.argv[2], sys.argv[3]))
+    query = "SELECT * FROM states"
+    result = engine.execute(query)
+    for row in result:
+        tmp = str(row[0]) + ":" + " " + row[1]
+        print(tmp)
