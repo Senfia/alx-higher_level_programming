@@ -4,26 +4,19 @@ this script prints all states from the database
 hbtn_0e_6_usa using SQLAlchemy
 """
 
-import sqlalchemy
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sys import argv
+import sys
 from model_state import Base, State
+from sqlalchemy import (create_engine)
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        sys.argv[1], sys.argv[2], sys.argv[3]), echo=False)
+        sys.argv[1], sys.argv[2], sys.argv[3]))
     Base.metadata.create_all(engine)
-
-    Session = sessionmaker(bind=engine)
-
-    session = Session()
-
-    result = session.query(State.id, State.name).order_by(State.id).first()
-    if result:
-        print("{:d}: {}".format(result[0], result[1]))
+    session1 = sessionmaker(bind=engine)
+    session2 = session1()
+    instance = session2.query(State).first()
+    if instance:
+        print("{}: {}".format(instance.id, instance.name))
     else:
         print("Nothing")
-
-    session.close()
-    engine.dispose()
