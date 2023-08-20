@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-this script prints all City objects from the database hbtn_0e_6_usa
+this script lists all City objects from the database hbtn_0e_6_usa
 using SQLAlchemy
 """
 
@@ -12,7 +12,7 @@ from model_state import Base, State
 from model_city import City
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: username password database name")
+        print("Usage: username password database_name")
     else:
         engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
                                (sys.argv[1], sys.argv[2], sys.argv[3]))

@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-This is module 102
-After using mysqldb to connect to a mysql database, same questions are done
-again with sqlalchemy
+lists all City objects from the database hbtn_0e_101_usa with sqlalchemy
 """
 from relationship_state import Base, State
 from relationship_city import City

@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
 This is module 11-model_state_insert
-After using mysqldb to connect to a mysql database, same questions are done
-again with sqlalchemy
+Creates the State “California” with the City “San Francisco”
+from the database hbtn_0e_100_usa.
 """
 from relationship_state import Base, State
 from relationship_city import City
@@ -20,11 +20,11 @@ if __name__ == "__main__":
     session = Session()
 
     new_state = State(name="California")
-    # print("state", new_state)
+
     new_city = City(name="San Francisco")
-    # print("city", new_city.state)
+
     new_state.cities.append(new_city)
-    # print("city", new_city.state)
+
 
     session.add(new_state)
     session.add(new_city)

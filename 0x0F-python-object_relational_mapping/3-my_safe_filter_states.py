@@ -9,7 +9,7 @@ import sys
 import MySQLdb
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: username, password, database name and state")
+        print("Usage: username, password, database_name and state")
     else:
         db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
                              db=sys.argv[3])

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-this script lists all states containing 'a' from hbtn_0e_6_usa
+this script adds the State object “Louisiana” to the database hbtn_0e_6_usa
 using SQLAlchemy
 """
 

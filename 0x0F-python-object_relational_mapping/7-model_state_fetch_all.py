@@ -8,7 +8,7 @@ import sys
 from sqlalchemy import create_engine
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: username password database name")
+        print("Usage: username password database_name")
     else:
         engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
             sys.argv[1], sys.argv[2], sys.argv[3]))

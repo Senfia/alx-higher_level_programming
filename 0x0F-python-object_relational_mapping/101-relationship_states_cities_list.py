@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """
 This is module 101
-After using mysqldb to connect to a mysql database, same questions are done
-again with sqlalchemy
+Lists all States and corresponding Cities in the database hbtn_0e_101_usa.
 """
 from relationship_state import Base, State
 from relationship_city import City
