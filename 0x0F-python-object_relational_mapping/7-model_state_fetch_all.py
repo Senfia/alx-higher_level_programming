@@ -15,5 +15,5 @@ if __name__ == "__main__":
     query = "SELECT * FROM states"
     result = engine.execute(query)
     for row in result:
-        temp = str(row[0]) + ":" + " " + row[1]
-        print(temp)
+        tmp = str(row[0]) + ":" + " " + row[1]
+        print(tmp)
