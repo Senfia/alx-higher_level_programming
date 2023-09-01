@@ -3,6 +3,7 @@
 Uses requests module yo get header info.
 """
 import requests
+import sys
 from sys import argv
 
 
