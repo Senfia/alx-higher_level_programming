@@ -1,19 +1,14 @@
 #!/usr/bin/python3
 """
-basic interaction with github API
+Takes 2 arguments to solve a challenge
 """
 import requests
-import sys
 from sys import argv
-from requests.auth import HTTPBasicAuth
 
-
-if __name__ == "__main__":
-    try:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        url = 'https://api.github.com/users/' + username
-        r = requests.get(url, auth=HTTPBasicAuth(username, password))
-        print(r.json()['id'])
-    except:
-        print("None")
+if __name__ == '__main__':
+    url = "https://api.github.com/repos/{}/{}/commits".format(argv[2], argv[1])
+    r = requests.get(url)
+    commits = r.json()
+    for commit in commits[:10]:
+        print(commit.get('sha'), end=': ')
+        print(commit.get('commit').get('author').get('name'))
