@@ -1,14 +1,15 @@
 #!/usr/bin/node
 
+// Import the 'request' module
 const request = require('request');
 
-const paramiters = {
-  url: 'https://swapi-api.hbtn.io/api' + process.argv[2],
-  method: 'GET'
-};
-request(paramiters, function (error, response, body) {
+const { argv } = require('process');
+
+// Make a request to the specified URL
+const BaseUrl = 'https://swapi-api.hbtn.io/api';
+request(BaseUrl + '/films/' + argv[2], (error, response, body) => {
   if (error) {
-    console.log(error);
+    console.error(error);
   }
-  console.log(JSON.parse(body)['title']);
+  console.log(JSON.parse(body).title);
 });
