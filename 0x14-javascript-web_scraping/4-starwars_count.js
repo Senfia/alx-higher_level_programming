@@ -11,8 +11,8 @@ request(opts, function (error, response, body) {
     return console.log(error);
   }
   let count = 0;
-  for (const e of JSON.parse(body)['results']) {
-    for (const subE of e['characters']) {
+  for (const e of JSON.parse(body).results) {
+    for (const subE of e.characters) {
       if (subE.includes('18')) {
         count += 1;
       }
